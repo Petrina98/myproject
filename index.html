@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flight Log SPA</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app">
+        <h1>Flight Log</h1>
+        
+        <!-- Login Page -->
+        <div id="loginPage" class="page">
+            <h2>Login</h2>
+            <input type="text" id="loginUsername" placeholder="Username">
+            <input type="password" id="loginPassword" placeholder="Password">
+            <button onclick="login()">Log In</button>
+        </div>
+        
+        <!-- Flight Log Page (visible after login) -->
+        <div id="flightLogPage" class="page" style="display: none;">
+            <h2>Flight Log Entries</h2>
+            <input type="text" id="searchFlightID" placeholder="Search by Flight ID" maxlength="5">
+            <button onclick="searchByFlightID()">Search</button>
+            <ul id="flightLogList"></ul>
+            
+            <h2>Create a New Flight Log Entry</h2>
+            <input type="text" id="tailNumber" placeholder="Tail Number" maxlength="5">
+            <input type="text" id="flightID" placeholder="Flight ID" maxlength="5">
+            <input type="datetime-local" id="takeoff" placeholder="Takeoff">
+            <input type="datetime-local" id="landing" placeholder="Landing">
+            <input type="number" id="duration" placeholder="Duration (hours)">
+            <button onclick="addFlightLogEntry()">Add Entry</button>
+            
+            <h2>Update Flight Log Entry</h2>
+            <input type="number" id="updateIndex" placeholder="Entry Index to Update">
+            <button onclick="updateFlightLogEntry()">Update Entry</button>
+            
+            <h2>Delete Flight Log Entry</h2>
+            <input type="number" id="deleteIndex" placeholder="Entry Index to Delete">
+            <button onclick="deleteFlightLogEntry()">Delete Entry</button>
+            
+            <button onclick="logout()">Log Out</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
